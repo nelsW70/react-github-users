@@ -28,8 +28,6 @@ const Repos = () => {
     })
     .slice(0, 5);
 
-  console.log(languages);
-
   const chartData = [
     {
       label: 'HTML',
@@ -49,6 +47,9 @@ const Repos = () => {
     <section className="global-section">
       <Wrapper className="section-center">
         <Pie3D data={languages} />
+        <div></div>
+        <Doughnut2D data={chartData} />
+        <div></div>
       </Wrapper>
     </section>
   );
