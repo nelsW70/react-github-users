@@ -6,8 +6,7 @@ import { GithubContext } from '../context/context';
 const Search = () => {
   const [user, setUser] = useState('');
   // get things from global context
-  const { requests } = useContext(GithubContext);
-  console.log(requests);
+  const { requests, error } = useContext(GithubContext);
 
   // form submit
   const handleSubmit = e => {
@@ -22,6 +21,11 @@ const Search = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch />
