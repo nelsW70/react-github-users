@@ -7,9 +7,15 @@ import { GithubProvider } from './context/context';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
-  <GithubProvider>
-    <App />
-  </GithubProvider>,
+  <Auth0Provider
+    domain="dev-xt9sojyq.us.auth0.com"
+    clientId="l0eZRw7lF2v5ogi0c0Ap3cneVYVr7WTA"
+    redirectUri={window.location.origin}
+  >
+    <GithubProvider>
+      <App />
+    </GithubProvider>
+  </Auth0Provider>,
   document.getElementById('root')
 );
 
